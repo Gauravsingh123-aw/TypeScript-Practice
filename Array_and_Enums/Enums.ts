@@ -68,3 +68,17 @@ type r={
 let c={
     R:role.success
 }
+
+
+//          COMPUTED ENUMS
+
+enum AccessPermisson{
+    None=0,
+    Read=1,
+    Write=2,
+    ReadWrite=Read+Write,
+    DELETE=4,
+    ALL= ReadWrite | DELETE,
+}
+
+console.log(AccessPermisson.ReadWrite, AccessPermisson.ALL);
