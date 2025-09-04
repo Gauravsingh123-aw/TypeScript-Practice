@@ -6,5 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // so here person does not ensure this order of first,last name and age in this order and only with these elements;
 let person = ["John", "Doe", 18];
 console.log(person);
-//tuples have types inside square bracket  , unlike array have type outside
+const passingStudents = [3, true, "John", "Scale", "Persistent"];
+let stringBN = ["abdc", true, false, false, false, true, true, 44];
+//ReadOnly Array and Tuples------------------------------>>>>>>>>>>>>
+let arr = [1, 2, 3];
+let personTuple = ["afesd", 3, true];
+let as = [1, "d"];
+// but above methods will be mostly used
 //# sourceMappingURL=Tuples.js.map
