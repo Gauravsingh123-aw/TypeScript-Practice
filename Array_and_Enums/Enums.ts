@@ -40,17 +40,6 @@ let p:Person={
 // difference between other types and enum is that enums get converted to js while others do not
 console.log(p);
 
-// we can use const too 
-// const role={
-//     pending:"pending",
-//     success:"success"
-// } as const;
-// type r={
-//     R:typeof role[keyof typeof role];
-// }
-// let c={
-//     R:role.success
-// }
 
 // when enum is declared with const keyword , it does not get compiled to js . Only its value gets (when it is used)
 const enum eDirection{
@@ -58,3 +47,24 @@ const enum eDirection{
     right=2,
 }
 let Edirection=eDirection.left; // only this get compiled and not enum with const
+
+
+// using object as const in MORDERN TS CODES
+
+// we can use const too - mordern ts codes use this over enum(although both are ok to use)
+
+
+const role={
+    pending:"pending",
+    success:"success"
+} as const;
+
+
+
+// but these object as const can not be used as types , to do so ---
+type r={
+    R:typeof role[keyof typeof role];       //this is the way
+} ;
+let c={
+    R:role.success
+}
