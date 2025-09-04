@@ -1,6 +1,4 @@
-"use strict";
 // enums are just like constants
-Object.defineProperty(exports, "__esModule", { value: true });
 // will automatically assing 1 to Up and keep incrementing later by 1 to other values
 var Direction;
 (function (Direction) {
@@ -27,11 +25,11 @@ var Roles;
     Roles["AUTHOR"] = "author";
     Roles["EDITOR"] = "editor";
 })(Roles || (Roles = {}));
-let p = {
+var p = {
     name: "Ram",
     email: "ram@email.com",
     role: Roles.ADMIN
 };
+// difference between other types and enum is that enums get converted to js while others do not
 console.log(p);
-console.log(Direction[0]);
-//# sourceMappingURL=Enums.js.map
+var Edirection = 1 /* eDirection.left */; // only this get compiled and not enum with const

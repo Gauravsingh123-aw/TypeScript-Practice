@@ -37,6 +37,24 @@ let p:Person={
     email:"ram@email.com",
     role:Roles.ADMIN
 }
+// difference between other types and enum is that enums get converted to js while others do not
 console.log(p);
-console.log(Direction[0]);
 
+// we can use const too 
+// const role={
+//     pending:"pending",
+//     success:"success"
+// } as const;
+// type r={
+//     R:typeof role[keyof typeof role];
+// }
+// let c={
+//     R:role.success
+// }
+
+// when enum is declared with const keyword , it does not get compiled to js . Only its value gets (when it is used)
+const enum eDirection{
+    left=1,
+    right=2,
+}
+let Edirection=eDirection.left; // only this get compiled and not enum with const
