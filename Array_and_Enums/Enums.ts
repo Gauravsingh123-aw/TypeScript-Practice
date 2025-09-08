@@ -83,3 +83,33 @@ enum AccessPermisson{
 }
 
 console.log(AccessPermisson.ReadWrite, AccessPermisson.ALL);
+
+
+//enums as type
+
+enum ShapeKind {
+    Circle = "circle",
+    Square = "sqaure",
+  }
+  
+  // A circle type would have additional properties
+  type Circle = {
+    kind: ShapeKind.Circle;
+    radius: number;
+  };
+  
+  // A sqaure type would have additional properties
+  type Square = {
+    kind: ShapeKind.Square;
+    sideLength: number;
+  };
+
+  let circle:Circle={
+    kind:ShapeKind.Circle,
+    radius:3
+  }
+
+  function printShapeName(shape:ShapeKind){
+    console.log(shape)
+  }
+  printShapeName(ShapeKind.Circle);
