@@ -40,3 +40,26 @@ type c=[string,number];
 
 type custom= readonly c; NOT ALLOWED
 ````
+
+
+## Tree Shaking
+
+#### its a build time optimization technique used to remove unused code from final js bundle. 
+Just like shaking tree to remove dead leaves 
+
+1. Relies on static analysis of ES module import/export
+2. Webpack or parcel detects unused codes and remove them
+
+
+## Reverse Mapping in Enums
+
+````
+enum Role {
+  Admin = 5,
+  User = 2
+}
+
+console.log(Role.Admin); // 1
+console.log(Role[5]);    // "Admin" ← reverse mapping!
+
+````

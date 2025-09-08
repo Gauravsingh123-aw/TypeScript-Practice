@@ -59,6 +59,7 @@ const role={
     success:"success"
 } as const;
 
+// this is read-only , const + as const is more efficient with Tree shaking
 
 
 // but these object as const can not be used as types , to do so ---
