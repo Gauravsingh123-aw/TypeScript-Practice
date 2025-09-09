@@ -23,11 +23,12 @@ type Person={
     name:string;
     age:number;
     ageUnit:Ageunits;
+    greet?:(name:string)=>string
 }
 let P1:Person={
     name:"Person1",
     age:20,
-    ageUnit:Ageunits.Years
+    ageUnit:Ageunits.Years,
 }
 console.log(changeageUnit(P1));
 function changeageUnit(p:Person):Person{
@@ -43,37 +44,20 @@ function changeageUnit(p:Person):Person{
     }
 }
 
-//practice 
-// Type alias for a greeting function
-type GreetFunction = (name?: string) => string;
+// correctly infering type for anonymous function
+let students:string[]=["ram","shyam","laxman"];
 
-// Implementation of greet function
-function greet(name: string = "Guest"): string {
-  return `Hello, ${name}!`;
+students.map((student)=>{
+    console.log(student);
+})
+
+// void and never type
+// when function does not return anything
+function Data (data:string):void{
+ console.log(data);
 }
 
-// Type alias for area calculation function
-type AreaFunction = (width: number, height?: number) => number;
-
-// Implementation of calculateArea function
-function calculateArea(width: number, height: number = 10): number {
-  return width * height;
+// when function never gets executed like error function - we type it as never (which is most strict type)
+function Er(error:string):never{
+    throw new Error(error);
 }
-
-// Type alias for status check function
-type StatusFunction = (isActive?: boolean) => string;
-
-// Implementation of checkStatus function
-function checkStatus(isActive: boolean = true): string {
-  return isActive ? "Active" : "Inactive";
-}
-
-// Function calls (no console output)
-greet();           // "Hello, Guest!"
-greet("John");    // "Hello, John!"
-
-calculateArea(5);           // 50
-calculateArea(5, 20);       // 100
-
-checkStatus();            // "Active"
-checkStatus(false);       // "Inactive"
