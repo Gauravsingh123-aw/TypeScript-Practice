@@ -1,14 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 //named function
 function Print(name, age) {
-    return "My name is ".concat(name, " and age is ").concat(age);
+    return `My name is ${name} and age is ${age}`;
 }
 // function expression
-var Print2 = function (name, age) {
-    return "My name is ".concat(name, " and age is ").concat(age);
+const Print2 = function (name, age) {
+    return `My name is ${name} and age is ${age}`;
 };
 // arrow functions
-var Print3 = function (name, age) {
-    return "My name is ".concat(name, " and age is ").concat(age);
+const Print3 = (name, age) => {
+    return `My name is ${name} and age is ${age}`;
 };
 // a required parameter cannot be declared after optional parameter
 var Ageunits;
@@ -17,10 +19,10 @@ var Ageunits;
     Ageunits["Months"] = "months";
 })(Ageunits || (Ageunits = {}));
 ;
-var P1 = {
+let P1 = {
     name: "Person1",
     age: 20,
-    ageUnit: Ageunits.Years
+    ageUnit: Ageunits.Years,
 };
 console.log(changeageUnit(P1));
 function changeageUnit(p) {
@@ -35,3 +37,18 @@ function changeageUnit(p) {
         return p;
     }
 }
+// correctly infering type for anonymous function
+let students = ["ram", "shyam", "laxman"];
+students.map((student) => {
+    console.log(student);
+});
+// void and never type
+// when function does not return anything
+function Data(data) {
+    console.log(data);
+}
+// when function never gets executed like error function - we type it as never (which is most strict type)
+function Er(error) {
+    throw new Error(error);
+}
+//# sourceMappingURL=index.js.map
